@@ -12,6 +12,13 @@ body {
     border-bottom: 2px solid #4adede;
   }
 
+nav .logo img {
+
+height: 100px;
+width: auto;
+
+}
+
   header h1 {
     color: #4adede;
     font-size: 2.5rem;
@@ -20,20 +27,49 @@ body {
 
   nav {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
     background-color: #151526;
-    padding: 10px;
-  }
+    padding: 25px;
+  } 
+  
 
-  nav a {
+   div#meio a {
+    font-size: large;
+    padding-right: 15px;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
     transition: color 0.3s;
+    justify-content: center;
+    position: relative;
+    
+ 
+    padding-right: 15px;
   }
 
-  nav a:hover {
+  div#meio a:hover {
+    color: #4adede;
+  }
+
+  div#Lado a {
+    
+    padding-right: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+
+  }
+
+  div#Lado button{
+
+    background-color: yellow;
+
+
+  }
+
+
+  div#Lado a:hover {
     color: #4adede;
   }
 

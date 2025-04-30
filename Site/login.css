@@ -15,7 +15,6 @@ body {
     border-radius: 10px;
     width: 300px;
     text-align: center;
-    border-image-repeat: no-repeat;
   }
   
   form {
