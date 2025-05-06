@@ -7,14 +7,18 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    background-image: url(Img/banner-tft.jpg);
+    
   }
-  
+ 
   .container {
-    background: #1c1c3c;
+   
+    background: rgba(11, 11, 61, 85%);
     padding: 50px;
     border-radius: 10px;
-    width: 300px;
+    width: 350px;
     text-align: center;
+    justify-content: end;
   }
   
   form {

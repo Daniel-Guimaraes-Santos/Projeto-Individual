@@ -7,10 +7,13 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    background-image: url(Img/banner-tft.jpg);
+    background-repeat: no-repeat;
   }
-  
+
   .container {
-    background: #1c1c3c;
+
+    background: rgba(11, 11, 61, 85%);
     padding: 50px;
     border-radius: 10px;
     width: 300px;

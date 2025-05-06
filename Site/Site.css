@@ -52,7 +52,7 @@ width: auto;
   }
 
   div#Lado a {
-    
+   
     padding-right: 15px;
     text-decoration: none;
     color: #fff;
@@ -60,14 +60,6 @@ width: auto;
     transition: color 0.3s;
 
   }
-
-  div#Lado button{
-
-    background-color: yellow;
-
-
-  }
-
 
   div#Lado a:hover {
     color: #4adede;
