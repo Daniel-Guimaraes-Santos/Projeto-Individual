@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Cadastro.css" />
+    <link rel="stylesheet" href="../CSS/Cadastro.css" />
 </head>
 <body>
     <div class="container">
@@ -14,7 +14,7 @@
           <input type="email" placeholder="Email" id="inp_email">
           <input type="password" placeholder="Senha" id="inp_senha">
           <input type="password" placeholder="Confirmação de senha" id="inp_confirmacao">
-          <button type="submit">Cadastrar</button>
+          <button onclick="cadastrar()" type="submit">Cadastrar</button>
           <p>Já tem conta? <a href="login.html">Faça login</a></p>
         </form>
         <p id="mensagem"></p>
@@ -22,3 +22,4 @@
 </div>
 </body>
 </html>
+ <script src="Cadastro.js"></script>
