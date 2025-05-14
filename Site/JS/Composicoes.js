@@ -5,6 +5,10 @@ for (let i = 0; i < 28; i++) {
   const hex = document.createElement('div');
   hex.classList.add('hex');
 
+hex.onclick = function() {
+  hex.innerHTML = '';
+};
+
   // Eventos de drag & drop
   hex.addEventListener('dragover', e => {
     e.preventDefault();
@@ -27,6 +31,9 @@ for (let i = 0; i < 28; i++) {
     hex.appendChild(unit);
     hex.classList.remove('over');
   });
+
+
+
 
   board.appendChild(hex);
 }

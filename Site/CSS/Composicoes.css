@@ -3,11 +3,9 @@ body {
     font-family: 'Orbitron', sans-serif;
     background: linear-gradient(180deg, #0a0a1a, #1a1a2e);                                                
     color: #f0f0f0;   
-    height: 100vh;
  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  background-repeat: no-repeat; 
-              
   }
 
   header {
@@ -175,13 +173,12 @@ button:hover {
     cursor: grab;
     margin-bottom: 10px;
   }
+
   footer {
     text-align: center;
     padding: 20px;
     background: #111122;
     color: #666;
     border-top: 2px solid #4adede;
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
+ 
   }

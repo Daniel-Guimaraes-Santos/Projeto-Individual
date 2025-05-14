@@ -150,9 +150,6 @@ footer {
     background: #111122;
     color: #666;
     border-top: 2px solid #4adede;
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
   }
 
 footer a {
