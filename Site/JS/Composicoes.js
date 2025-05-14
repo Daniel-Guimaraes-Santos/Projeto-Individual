@@ -11,6 +11,10 @@ for (let i = 0; i < 28; i++) {
     hex.classList.add('over');
   });
 
+  function limparTabuleiro() {
+  document.querySelectorAll('.hex').forEach(hex => hex.innerHTML = '');
+};
+
   hex.addEventListener('dragleave', () => {
     hex.classList.remove('over');
   });

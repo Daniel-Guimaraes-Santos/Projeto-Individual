@@ -9,32 +9,34 @@
 
 <body>
   <header>
-    <nav>
+    <nav class="navbar">
       <div class="logo">
-        <img src="" alt="LogoTFTmastery">
+    <a href="Index.html"><img src="../Img/Logo2.png" alt="LogoTFTmastery" href="Index.html"/></a>
       </div>
-      <div id="meio">
+      <div id="meio" class="nav-links">
         <a href="Index.html">Início</a>
         <a href="Composicoes.html">Composições</a>
         <a href="#">Itens</a>
         <a href="#">Tier List</a>
-        <a href="#">Patch Notes</a>
+        <a href="Patch.html">Patch Notes</a>
       </div>
-      <div id="Lado">
+      <div id="Lado" class="auth-links">
         <a href="Login.html">Login</a>
         <a href="Cadastro.html">Cadastro</a>
       </div>
-
     </nav>
   </header>
   <div class="board">
     <!-- Geração dinâmica via JS -->
   </div>
-
+<div style="text-align:center; margin: 20px;">
+  <button onclick="limparTabuleiro()">Limpar Tabuleiro</button>
+</div>
   <div class="units">
     <h3>Unidades</h3>
     <div class="unit-pool" id="unit-pool">
       <!-- Unidades com imagem -->
+       
       <img src="../Img/personagens/annie.JPG" class="unit" draggable="true" data-name="annie">
 
       <img src="../Img/personagens/alistar.JPG" class="unit" draggable="true" data-name="alistar">
@@ -186,7 +188,7 @@
       <img src="../Img/personagens/zyra.JPG" class="unit" draggable="true" data-name="zyra">
 
 
-      <!-- Adicione mais -->
+     
     </div>
   </div>
   <footer>
