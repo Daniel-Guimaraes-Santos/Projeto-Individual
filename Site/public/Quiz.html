@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patch Note</title>
+    <script src="./js/sessao.js"></script>
+    <link rel="stylesheet" href="CSS/Quiz.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="Index.html"
+            ><img src="Img/Logo2.png" alt="LogoTFTmastery" href="Index.html"
+          /></a>
+        </div>
+        <div id="meio" class="nav-links">
+          <a href="Index.html">Início</a>
+          <a href="MonteComp.html">Crie sua composição</a>
+          <a href="Itens.html">Itens</a>
+          <a href="Composicoes.html">Composições</a>
+          <a href="#">Dashboard</a>
+          <a href="Quiz.html">Quiz</a>
+        </div>
+        <div id="Lado" class="Lado-links">
+          <a href="Login.html">Login</a>
+          <a href="Cadastro.html">Cadastro</a>
+        </div>
+      </nav>
+    </header>
+    <!-- Seção de instruções e botão para iniciar -->
+    <section id="instrucoes">
+      <h2>Como funciona o Quiz de Itens do TFT?</h2>
+      <p>
+        Neste quiz, você verá um <strong>item final</strong> de Teamfight
+        Tactics.
+      </p>
+      <p>
+        Seu desafio é arrastar os <strong>dois itens base corretos</strong> que
+        criam esse item.
+      </p>
+      <p>
+        Após posicionar os dois itens nos quadrados, clique em
+        <strong>"Verificar"</strong> para saber se você acertou.
+      </p>
+      <p>
+        A cada partida, você terá <strong>5 perguntas aleatórias</strong> para
+        testar seus conhecimentos de combinações.
+      </p>
+      <p>Clique no botão abaixo para começar. Boa sorte, estrategista!</p>
+      <button onclick="iniciarQuiz()">Jogar</button>
+    </section>
+
+    <!-- Container do quiz (inicialmente escondido) -->
+    <section id="quiz-container">
+      <!-- Mostra o item final que o usuário deve formar -->
+      <div id="item-final">
+        <img src="" alt="Item Final" id="img-item-final" draggable="false" />
+        <p id="nome-item-final"></p>
+      </div>
+
+      <!-- Slots para arrastar os dois itens base -->
+      <div id="slots">
+        <div
+          class="slot"
+          id="slot1"
+          ondrop="soltar(event)"
+          ondragover="permitirSoltar(event)"
+        ></div>
+        <div
+          class="slot"
+          id="slot2"
+          ondrop="soltar(event)"
+          ondragover="permitirSoltar(event)"
+        ></div>
+      </div>
+
+      <!-- Itens base para arrastar -->
+      <div id="itens-base"></div>
+
+      <!-- Botões de ação -->
+      <div>
+        <button id="verificar-btn" onclick="verificarResposta()">
+          Verificar
+        </button>
+        <button
+          id="proxima-btn"
+          onclick="proximaPergunta()"
+          style="display: none"
+        >
+          Próxima Pergunta
+        </button>
+      </div>
+
+      <!-- Resultado da verificação -->
+      <div id="resultado"></div>
+    </section>
+
+    <footer>
+      <p>© 2025 TFT Companion - Não afiliado à Riot Games.</p>
+    </footer>
+  </body>
+</html>
+
+<script>
+  // Lista de itens do quiz: cada item final tem 2 itens base
+  const perguntas = [
+    {
+      nome: "Efeito Azul",
+      imgFinal: "Img/Itens/S-BlueBuff.png",
+      base1: { nome: "Lágrima", img: "Img/Itens/Gota.png" },
+      base2: { nome: "Lágrima", img: "Img/Itens/Gota.png" },
+    },
+    {
+      nome: "Placa Gargolítica",
+      imgFinal: "Img/Itens/S-GargoyleStoneplate.png",
+      base1: { nome: "Armadura", img: "Img/Itens/Armadura.png" },
+      base2: { nome: "Capa", img: "Img/Itens/Capa.png" },
+    },
+    {
+      nome: "Lâmina da fúria de guinsoo",
+      imgFinal: "Img/Itens/S-GuinsoosRageblade.png",
+      base1: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+      base2: { nome: "Arco", img: "Img/Itens/Arco.png" },
+    },
+    {
+      nome: "Gume do Infinito",
+      imgFinal: "Img/Itens/S-InfinityEdge.png",
+      base1: { nome: "Espada", img: "Img/Itens/Espada.png" },
+      base2: { nome: "Luva", img: "Img/Itens/luva.png" },
+    },
+    {
+      nome: "Manopla Adornada",
+      imgFinal: "Img/Itens/S-JeweledGauntlet.png",
+      base1: { nome: "Luva", img: "Img/Itens/luva.png" },
+      base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+    },
+        {
+      nome: "Manopla Adornada",
+      imgFinal: "Img/Itens/S-JeweledGauntlet.png",
+      base1: { nome: "Luva", img: "Img/Itens/luva.png" },
+      base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+    },
+        {
+      nome: "Manopla Adornada",
+      imgFinal: "Img/Itens/S-JeweledGauntlet.png",
+      base1: { nome: "Luva", img: "Img/Itens/luva.png" },
+      base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+    },
+        {
+      nome: "Manopla Adornada",
+      imgFinal: "Img/Itens/S-JeweledGauntlet.png",
+      base1: { nome: "Luva", img: "Img/Itens/luva.png" },
+      base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+    },
+        {
+      nome: "Manopla Adornada",
+      imgFinal: "Img/Itens/S-JeweledGauntlet.png",
+      base1: { nome: "Luva", img: "Img/Itens/luva.png" },
+      base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+    },
+        {
+      nome: "Manopla Adornada",
+      imgFinal: "Img/Itens/S-JeweledGauntlet.png",
+      base1: { nome: "Luva", img: "Img/Itens/luva.png" },
+      base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+    },
+        {
+      nome: "Manopla Adornada",
+      imgFinal: "Img/Itens/S-JeweledGauntlet.png",
+      base1: { nome: "Luva", img: "Img/Itens/luva.png" },
+      base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+    },
+        {
+      nome: "Manopla Adornada",
+      imgFinal: "Img/Itens/S-JeweledGauntlet.png",
+      base1: { nome: "Luva", img: "Img/Itens/luva.png" },
+      base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+    },
+        {
+      nome: "Manopla Adornada",
+      imgFinal: "Img/Itens/S-JeweledGauntlet.png",
+      base1: { nome: "Luva", img: "Img/Itens/luva.png" },
+      base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+    },
+        {
+      nome: "Manopla Adornada",
+      imgFinal: "Img/Itens/S-JeweledGauntlet.png",
+      base1: { nome: "Luva", img: "Img/Itens/luva.png" },
+      base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+    },
+        {
+      nome: "Manopla Adornada",
+      imgFinal: "Img/Itens/S-JeweledGauntlet.png",
+      base1: { nome: "Luva", img: "Img/Itens/luva.png" },
+      base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
+    },
+  ];
+
+  // Variáveis de controle
+  let perguntasSelecionadas = []; // perguntas da rodada atual
+  let perguntaAtual = 0;
+
+  // Função para iniciar o quiz quando o usuário clicar em "Jogar"
+  function iniciarQuiz() {
+    // Esconde a seção de instruções
+    document.getElementById("instrucoes").style.display = "none";
+
+    // Mostra o container do quiz
+    document.getElementById("quiz-container").style.display = "block";
+
+    // Seleciona 5 perguntas aleatórias (ou menos se não tiver 5)
+    perguntasSelecionadas = sortearPerguntas(5);
+
+    perguntaAtual = 0;
+
+    carregarPergunta(perguntaAtual);
+  }
+
+  // Sorteia 'qtd' perguntas diferentes da lista original
+  function sortearPerguntas(qtd) {
+    let copiaperguntas = [...perguntas];
+    let sorteadas = [];
+    for (var i = 0; i < qtd && copiaperguntas.length > 0; i++) {
+      var idx = Math.floor(Math.random() * copiaperguntas.length);
+      sorteadas.push(copiaperguntas[idx]);
+      copiaperguntas.splice(idx, 1);
+    }
+    return sorteadas;
+  }
+
+  // Carrega uma pergunta na tela
+  function carregarPergunta(index) {
+    limparSlots();
+    limparResultado();
+    mostrarVerificar();
+
+    const pergunta = perguntasSelecionadas[index];
+
+    // Atualiza a imagem e nome do item final
+    const imgFinal = document.getElementById("img-item-final");
+    imgFinal.src = pergunta.imgFinal;
+    imgFinal.alt = pergunta.nome;
+
+    document.getElementById("nome-item-final").textContent = pergunta.nome;
+
+    // Monta os itens base disponíveis (embora só 2 sejam corretos, pode mostrar mais para desafio)
+    // Aqui vamos mostrar todos os itens base possíveis para facilitar o quiz (ou só os que pertencem às perguntas)
+    montarItensBase(perguntasSelecionadas);
+  }
+
+  // Monta os itens base para o usuário arrastar
+  function montarItensBase(listaPerguntas) {
+    const container = document.getElementById("itens-base");
+    container.innerHTML = "";
+
+    // Vamos montar um array único com todos os itens base das perguntas selecionadas para variar o desafio
+    let todosItensBase = [];
+
+    listaPerguntas.forEach((p) => {
+      todosItensBase.push(p.base1);
+      todosItensBase.push(p.base2);
+    });
+
+    // Remover duplicados pelo nome
+    todosItensBase = todosItensBase.filter(
+      (item, pos, self) => self.findIndex((i) => i.nome === item.nome) === pos
+    );
+
+    todosItensBase.forEach((item) => {
+      const div = document.createElement("div");
+      div.classList.add("item-base");
+      div.setAttribute("draggable", "true");
+      div.setAttribute("data-nome", item.nome);
+      div.setAttribute("ondragstart", "arrastar(event)");
+      div.title = item.nome;
+
+      const img = document.createElement("img");
+      img.src = item.img;
+      img.alt = item.nome;
+
+      div.appendChild(img);
+      container.appendChild(div);
+    });
+  }
+
+  // Funções para drag and drop
+
+  // Permitir soltar nos slots
+  function permitirSoltar(event) {
+    event.preventDefault();
+  }
+
+  // Guardar o id do item base que está sendo arrastado
+  function arrastar(event) {
+    let elemento = event.target;
+
+    while (
+      !elemento.classList.contains("item-base") &&
+      elemento.parentElement
+    ) {
+      elemento = elemento.parentElement;
+    }
+
+    event.dataTransfer.setData("text", elemento.getAttribute("data-nome"));
+  }
+
+  // Soltar item dentro do slot (permite apenas 1 por slot, troca se já tiver)
+  function soltar(event) {
+    event.preventDefault();
+    const nomeItem = event.dataTransfer.getData("text");
+
+    const slot = event.currentTarget;
+
+    console.log("Item solto:", nomeItem);
+    // Se já tem um item, remove
+    if (slot.firstChild) {
+      slot.removeChild(slot.firstChild);
+    }
+
+    // Procurar a div do item-base pelo nome para clonar a imagem
+    const itemBaseDiv = Array.from(
+      document.querySelectorAll(".item-base")
+    ).find((div) => div.getAttribute("data-nome") === nomeItem);
+
+    if (itemBaseDiv) {
+      const clone = itemBaseDiv.cloneNode(true);
+      clone.removeAttribute("draggable");
+      clone.classList.remove("item-base");
+      clone.style.cursor = "default";
+
+      // Ajustar tamanho da imagem no slot
+      clone.style.width = "80px";
+      clone.style.height = "80px";
+      clone.firstChild.style.width = "100%";
+      clone.firstChild.style.height = "100%";
+
+      slot.appendChild(clone);
+    }
+  }
+
+  // Verifica se os dois itens nos slots são os corretos
+  function verificarResposta() {
+    const slot1 = document.getElementById("slot1");
+    const slot2 = document.getElementById("slot2");
+
+    if (!slot1.firstChild || !slot2.firstChild) {
+      alert("Arraste os dois itens base para os slots antes de verificar!");
+      return;
+    }
+
+    const selecionado1 = slot1.firstChild.getAttribute("data-nome");
+    const selecionado2 = slot2.firstChild.getAttribute("data-nome");
+
+    const pergunta = perguntasSelecionadas[perguntaAtual];
+
+    // Verifica se os itens arrastados são os mesmos, em qualquer ordem
+    const acerto =
+      (selecionado1 == pergunta.base1.nome &&
+        selecionado2 == pergunta.base2.nome) ||
+      (selecionado2 == pergunta.base1.nome &&
+        selecionado1 == pergunta.base2.nome);
+
+    const resultado = document.getElementById("resultado");
+    if (acerto) {
+      resultado.style.color = "#4adede";
+      resultado.textContent = "Parabéns! Você acertou!";
+    } else {
+      resultado.style.color = "#e74c3c";
+      resultado.textContent = "Ops! Você errou. Tente a próxima.";
+    }
+
+    // Esconde botão verificar, mostra próximo
+    document.getElementById("verificar-btn").style.display = "none";
+    document.getElementById("proxima-btn").style.display = "inline-block";
+  }
+
+  // Limpar slots para a próxima pergunta
+  function limparSlots() {
+    document.getElementById("slot1").innerHTML = "";
+    document.getElementById("slot2").innerHTML = "";
+  }
+
+  // Limpar resultado e mostrar botão verificar
+  function limparResultado() {
+    const resultado = document.getElementById("resultado");
+    resultado.textContent = "";
+  }
+
+  function mostrarVerificar() {
+    document.getElementById("verificar-btn").style.display = "inline-block";
+    document.getElementById("proxima-btn").style.display = "none";
+  }
+
+  // Avança para a próxima pergunta ou finaliza o quiz
+  function proximaPergunta() {
+    perguntaAtual++;
+    limparResultado();
+
+    if (perguntaAtual >= perguntasSelecionadas.length) {
+      // Acabaram as perguntas
+      alert("Quiz finalizado! Obrigado por jogar.");
+      // Reiniciar quiz para jogar de novo (opcional)
+      window.location.reload();
+    } else {
+      carregarPergunta(perguntaAtual);
+    }
+  }
+</script>

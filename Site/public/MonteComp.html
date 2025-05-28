@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>Tabuleiro</title>
-    <link rel="stylesheet" href="../CSS/MonteComp.css" />
+    <script src="./js/sessao.js"></script>
+    <link rel="stylesheet" href="CSS/MonteComp.css" />
   </head>
 
   <body>
@@ -11,450 +12,449 @@
       <nav class="navbar">
         <div class="logo">
           <a href="Index.html"
-            ><img src="../Img/Logo2.png" alt="LogoTFTmastery" href="Index.html"
+            ><img src="Img/Logo2.png" alt="LogoTFTmastery" href="Index.html"
           /></a>
         </div>
         <div id="meio" class="nav-links">
           <a href="Index.html">Início</a>
           <a href="Composicoes.html">Crie sua composição</a>
           <a href="Itens.html">Itens</a>
-          <a href="TierList.html">composições</a>
+          <a href="TierList.html">Composições</a>
           <a href="#">Dashboard</a>
-          <a href="Patch.html">Patch Note</a>
+          <a href="Quiz.html">Quiz</a>
         </div>
-        <div id="Lado" class="auth-links">
+        <div id="Lado" class="Lado-links">
           <a href="Login.html">Login</a>
           <a href="Cadastro.html">Cadastro</a>
         </div>
       </nav>
     </header>
-    <div class="board">
+    <div class="Campo">
       <!-- Geração dinâmica via JS -->
     </div>
     <div style="text-align: center; margin: 20px">
       <button onclick="limparTabuleiro()">Limpar Tabuleiro</button>
     </div>
-    <div class="units">
+    <div class="Unidades">
       <h3>Unidades</h3>
-      <div class="unit-pool" id="unit-pool">
-        <!-- Unidades com imagem -->
+      <div class="unidade-geral" id="unidade-geral">
 
         <img
-          src="../Img/personagens/annie.JPG"
-          class="unit"
+          src="Img/personagens/annie.JPG"
+          class="unidade"
           draggable="true"
           data-name="annie"
         />
 
         <img
-          src="../Img/personagens/alistar.JPG"
-          class="unit"
+          src="Img/personagens/alistar.JPG"
+          class="unidade"
           draggable="true"
           data-name="alistar"
         />
 
         <img
-          src="../Img/personagens/aphelios.JPG"
-          class="unit"
+          src="Img/personagens/aphelios.JPG"
+          class="unidade"
           draggable="true"
           data-name="aphelios"
         />
 
         <img
-          src="../Img/personagens/aurora.JPG"
-          class="unit"
+          src="Img/personagens/aurora.JPG"
+          class="unidade"
           draggable="true"
           data-name="aurora"
         />
 
         <img
-          src="../Img/personagens/brand.JPG"
-          class="unit"
+          src="Img/personagens/brand.JPG"
+          class="unidade"
           draggable="true"
           data-name="brand"
         />
 
         <img
-          src="../Img/personagens/braum.JPG"
-          class="unit"
+          src="Img/personagens/braum.JPG"
+          class="unidade"
           draggable="true"
           data-name="braum"
         />
 
         <img
-          src="../Img/personagens/chogath.JPG"
-          class="unit"
+          src="Img/personagens/chogath.JPG"
+          class="unidade"
           draggable="true"
           data-name="chogath"
         />
 
         <img
-          src="../Img/personagens/darius.JPG"
-          class="unit"
+          src="Img/personagens/darius.JPG"
+          class="unidade"
           draggable="true"
           data-name="darius"
         />
 
         <img
-          src="../Img/personagens/dr_mundo.JPG"
-          class="unit"
+          src="Img/personagens/dr_mundo.JPG"
+          class="unidade"
           draggable="true"
           data-name="dr_mundo"
         />
 
         <img
-          src="../Img/personagens/draven.JPG"
-          class="unit"
+          src="Img/personagens/draven.JPG"
+          class="unidade"
           draggable="true"
           data-name="draven"
         />
 
         <img
-          src="../Img/personagens/ekko.JPG"
-          class="unit"
+          src="Img/personagens/ekko.JPG"
+          class="unidade"
           draggable="true"
           data-name="ekko"
         />
 
         <img
-          src="../Img/personagens/elise.JPG"
-          class="unit"
+          src="Img/personagens/elise.JPG"
+          class="unidade"
           draggable="true"
           data-name="elise"
         />
 
         <img
-          src="../Img/personagens/fiddlesticks.JPG"
-          class="unit"
+          src="Img/personagens/fiddlesticks.JPG"
+          class="unidade"
           draggable="true"
           data-name="fiddlesticks"
         />
 
         <img
-          src="../Img/personagens/galio.JPG"
-          class="unit"
+          src="Img/personagens/galio.JPG"
+          class="unidade"
           draggable="true"
           data-name="galio"
         />
 
         <img
-          src="../Img/personagens/garen.JPG"
-          class="unit"
+          src="Img/personagens/garen.JPG"
+          class="unidade"
           draggable="true"
           data-name="garen"
         />
 
         <img
-          src="../Img/personagens/gragas.JPG"
-          class="unit"
+          src="Img/personagens/gragas.JPG"
+          class="unidade"
           draggable="true"
           data-name="gragas"
         />
 
         <img
-          src="../Img/personagens/graves.JPG"
-          class="unit"
+          src="Img/personagens/graves.JPG"
+          class="unidade"
           draggable="true"
           data-name="graves"
         />
 
         <img
-          src="../Img/personagens/illaoi.JPG"
-          class="unit"
+          src="Img/personagens/illaoi.JPG"
+          class="unidade"
           draggable="true"
           data-name="illaoi"
         />
 
         <img
-          src="../Img/personagens/jarvan.JPG"
-          class="unit"
+          src="Img/personagens/jarvan.JPG"
+          class="unidade"
           draggable="true"
           data-name="jarvan"
         />
 
         <img
-          src="../Img/personagens/jax.JPG"
-          class="unit"
+          src="Img/personagens/jax.JPG"
+          class="unidade"
           draggable="true"
           data-name="jax"
         />
 
         <img
-          src="../Img/personagens/jhin.JPG"
-          class="unit"
+          src="Img/personagens/jhin.JPG"
+          class="unidade"
           draggable="true"
           data-name="jhin"
         />
 
         <img
-          src="../Img/personagens/jinx.JPG"
-          class="unit"
+          src="Img/personagens/jinx.JPG"
+          class="unidade"
           draggable="true"
           data-name="jinx"
         />
 
         <img
-          src="../Img/personagens/kindred.JPG"
-          class="unit"
+          src="Img/personagens/kindred.JPG"
+          class="unidade"
           draggable="true"
           data-name="kindred"
         />
 
         <img
-          src="../Img/personagens/kobuko.JPG"
-          class="unit"
+          src="Img/personagens/kobuko.JPG"
+          class="unidade"
           draggable="true"
           data-name="kobuko"
         />
 
         <img
-          src="../Img/personagens/kogmaw.JPG"
-          class="unit"
+          src="Img/personagens/kogmaw.JPG"
+          class="unidade"
           draggable="true"
           data-name="kogmaw"
         />
 
         <img
-          src="../Img/personagens/leblanc.JPG"
-          class="unit"
+          src="Img/personagens/leblanc.JPG"
+          class="unidade"
           draggable="true"
           data-name="leblanc"
         />
 
         <img
-          src="../Img/personagens/leona.JPG"
-          class="unit"
+          src="Img/personagens/leona.JPG"
+          class="unidade"
           draggable="true"
           data-name="leona"
         />
 
         <img
-          src="../Img/personagens/miss_fortune.JPG"
-          class="unit"
+          src="Img/personagens/miss_fortune.JPG"
+          class="unidade"
           draggable="true"
           data-name="miss_fortune"
         />
 
         <img
-          src="../Img/personagens/mordekaiser.JPG"
-          class="unit"
+          src="Img/personagens/mordekaiser.JPG"
+          class="unidade"
           draggable="true"
           data-name="mordekaiser"
         />
 
         <img
-          src="../Img/personagens/morgana.JPG"
-          class="unit"
+          src="Img/personagens/morgana.JPG"
+          class="unidade"
           draggable="true"
           data-name="morgana"
         />
 
         <img
-          src="../Img/personagens/naafiri.JPG"
-          class="unit"
+          src="Img/personagens/naafiri.JPG"
+          class="unidade"
           draggable="true"
           data-name="naafiri"
         />
 
         <img
-          src="../Img/personagens/neeko.JPG"
-          class="unit"
+          src="Img/personagens/neeko.JPG"
+          class="unidade"
           draggable="true"
           data-name="neeko"
         />
 
         <img
-          src="../Img/personagens/nidalee.JPG"
-          class="unit"
+          src="Img/personagens/nidalee.JPG"
+          class="unidade"
           draggable="true"
           data-name="nidalee"
         />
 
         <img
-          src="../Img/personagens/poppy.JPG"
-          class="unit"
+          src="Img/personagens/poppy.JPG"
+          class="unidade"
           draggable="true"
           data-name="poppy"
         />
 
         <img
-          src="../Img/personagens/renekton.JPG"
-          class="unit"
+          src="Img/personagens/renekton.JPG"
+          class="unidade"
           draggable="true"
           data-name="renekton"
         />
 
         <img
-          src="../Img/personagens/rengar.JPG"
-          class="unit"
+          src="Img/personagens/rengar.JPG"
+          class="unidade"
           draggable="true"
           data-name="rengar"
         />
 
         <img
-          src="../Img/personagens/rhaast.JPG"
-          class="unit"
+          src="Img/personagens/rhaast.JPG"
+          class="unidade"
           draggable="true"
           data-name="rhaast"
         />
 
         <img
-          src="../Img/personagens/samira.JPG"
-          class="unit"
+          src="Img/personagens/samira.JPG"
+          class="unidade"
           draggable="true"
           data-name="samira"
         />
 
         <img
-          src="../Img/personagens/sejuani.JPG"
-          class="unit"
+          src="Img/personagens/sejuani.JPG"
+          class="unidade"
           draggable="true"
           data-name="sejuani"
         />
 
         <img
-          src="../Img/personagens/senna.JPG"
-          class="unit"
+          src="Img/personagens/senna.JPG"
+          class="unidade"
           draggable="true"
           data-name="senna"
         />
 
         <img
-          src="../Img/personagens/seraphine.JPG"
-          class="unit"
+          src="Img/personagens/seraphine.JPG"
+          class="unidade"
           draggable="true"
           data-name="seraphine"
         />
 
         <img
-          src="../Img/personagens/shaco.JPG"
-          class="unit"
+          src="Img/personagens/shaco.JPG"
+          class="unidade"
           draggable="true"
           data-name="shaco"
         />
 
         <img
-          src="../Img/personagens/shyvana.JPG"
-          class="unit"
+          src="Img/personagens/shyvana.JPG"
+          class="unidade"
           draggable="true"
           data-name="shyvana"
         />
 
         <img
-          src="../Img/personagens/skarner.JPG"
-          class="unit"
+          src="Img/personagens/skarner.JPG"
+          class="unidade"
           draggable="true"
           data-name="skarner"
         />
 
         <img
-          src="../Img/personagens/sylas.JPG"
-          class="unit"
+          src="Img/personagens/sylas.JPG"
+          class="unidade"
           draggable="true"
           data-name="sylas"
         />
 
         <img
-          src="../Img/personagens/TF.JPG"
-          class="unit"
+          src="Img/personagens/TF.JPG"
+          class="unidade"
           draggable="true"
           data-name="TF"
         />
 
         <img
-          src="../Img/personagens/urgot.JPG"
-          class="unit"
+          src="Img/personagens/urgot.JPG"
+          class="unidade"
           draggable="true"
           data-name="urgot"
         />
 
         <img
-          src="../Img/personagens/varus.JPG"
-          class="unit"
+          src="Img/personagens/varus.JPG"
+          class="unidade"
           draggable="true"
           data-name="varus"
         />
 
         <img
-          src="../Img/personagens/vayne.JPG"
-          class="unit"
+          src="Img/personagens/vayne.JPG"
+          class="unidade"
           draggable="true"
           data-name="vayne"
         />
 
         <img
-          src="../Img/personagens/veigar.JPG"
-          class="unit"
+          src="Img/personagens/veigar.JPG"
+          class="unidade"
           draggable="true"
           data-name="veigar"
         />
 
         <img
-          src="../Img/personagens/vex.JPG"
-          class="unit"
+          src="Img/personagens/vex.JPG"
+          class="unidade"
           draggable="true"
           data-name="vex"
         />
 
         <img
-          src="../Img/personagens/vi.JPG"
-          class="unit"
+          src="Img/personagens/vi.JPG"
+          class="unidade"
           draggable="true"
           data-name="vi"
         />
 
         <img
-          src="../Img/personagens/viego.JPG"
-          class="unit"
+          src="Img/personagens/viego.JPG"
+          class="unidade"
           draggable="true"
           data-name="viego"
         />
 
         <img
-          src="../Img/personagens/xayah.JPG"
-          class="unit"
+          src="Img/personagens/xayah.JPG"
+          class="unidade"
           draggable="true"
           data-name="xayah"
         />
 
         <img
-          src="../Img/personagens/yuumi.JPG"
-          class="unit"
+          src="Img/personagens/yuumi.JPG"
+          class="unidade"
           draggable="true"
           data-name="yuumi"
         />
 
         <img
-          src="../Img/personagens/zac.JPG"
-          class="unit"
+          src="Img/personagens/zac.JPG"
+          class="unidade"
           draggable="true"
           data-name="zac"
         />
 
         <img
-          src="../Img/personagens/zed.JPG"
-          class="unit"
+          src="Img/personagens/zed.JPG"
+          class="unidade"
           draggable="true"
           data-name="zed"
         />
 
         <img
-          src="../Img/personagens/zeri.JPG"
-          class="unit"
+          src="Img/personagens/zeri.JPG"
+          class="unidade"
           draggable="true"
           data-name="zeri"
         />
 
         <img
-          src="../Img/personagens/ziggs.JPG"
-          class="unit"
+          src="Img/personagens/ziggs.JPG"
+          class="unidade"
           draggable="true"
           data-name="ziggs"
         />
 
         <img
-          src="../Img/personagens/zyra.JPG"
-          class="unit"
+          src="Img/personagens/zyra.JPG"
+          class="unidade"
           draggable="true"
           data-name="zyra"
         />
@@ -463,6 +463,6 @@
     <footer>
       <p>© 2025 TFT Companion - Não afiliado à Riot Games.</p>
     </footer>
-    <script src="../JS/Composicoes.js"></script>
+    <script src="JS/Composicoes.js"></script>
   </body>
 </html>

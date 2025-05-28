@@ -1,0 +1,284 @@
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(180deg, #0a0a1a, #1a1a2e);                                                
+    color: #f0f0f0;   
+ background-size: cover;
+    background-position: center;
+  background-repeat: no-repeat; 
+              
+  }
+
+  header {
+    background: #111122;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #4adede;
+  }
+
+nav.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #151526;
+  padding: 20px 50px;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 90px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Lado-links {
+  display: flex;
+  gap: 20px;
+}
+
+
+.nav-links a{
+
+color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 20px; 
+  letter-spacing: 0.5px;
+
+}
+.Lado-links a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 20px; 
+  letter-spacing: 0.5px;
+}
+
+.nav-links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #4adede;
+  transition: width 0.3s;
+  margin: 2px auto 0;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+.nav-links a:hover{
+
+color: #4adede;
+
+}
+
+.Lado-links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #4adede;
+  transition: width 0.3s;
+  margin: 2px auto 0;
+}
+
+.Lado-links a:hover::after {
+  width: 100%;
+}
+
+.Lado-links a:hover {
+  color: #4adede;
+}
+
+  /* Instruções - explicação antes de começar */
+  #instrucoes {
+    margin-top: 100px;
+    background-color: #111122;
+    padding: 40px 20px;
+    border-bottom: 2px solid #4adede;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #f0f0f0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #instrucoes h2 {
+    color: #4adede;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  #instrucoes p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  #instrucoes p strong {
+    color: #4adede;
+  }
+
+  #instrucoes button {
+    background: #151526;
+    color: #4adede;
+    border: 2px solid #4adede;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 0 10px rgba(74, 222, 222, 0.3);
+  }
+
+  #instrucoes button:hover {
+    background-color: #4adede;
+    color: #151526;
+    box-shadow: 0 0 20px rgba(74, 222, 222, 0.8);
+    transform: scale(1.05);
+  }
+
+  /* Área do quiz, inicialmente oculta */
+  #quiz-container {
+    margin-top: 100px;
+    display: none;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    text-align: center;
+  }
+
+  /* Exibição do item final */
+  #item-final {
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+
+  #item-final img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border: 2px solid #4adede;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #4adede;
+    margin-bottom: 10px;
+  }
+
+  #item-final p {
+    font-size: 22px;
+    color: #4adede;
+    font-weight: bold;
+  }
+
+  /* Área dos slots onde o usuário arrasta os itens base */
+  #slots {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+  }
+
+  .slot {
+    width: 90px;
+    height: 90px;
+    background-color: #151526;
+    border: 2px dashed #4adede;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slot img {
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 8px;
+    pointer-events: none; /* evita conflitos com drag */
+  }
+
+  /* Área dos itens base disponíveis para arrastar */
+  #itens-base {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .item-base {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    cursor: grab;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .item-base:active {
+    cursor: grabbing;
+  }
+
+  .item-base.dragging {
+    opacity: 0.5;
+  }
+
+  .item-base img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .item-base:hover {
+    border-color: #4adede;
+  }
+
+  /* Botões verificar e próxima */
+  #verificar-btn, #proxima-btn {
+    background: #151526;
+    color: #4adede;
+    border: 2px solid #4adede;
+    padding: 12px 40px;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 0 10px rgba(74, 222, 222, 0.3);
+    margin: 0 10px;
+  }
+
+  #verificar-btn:hover, #proxima-btn:hover {
+    background-color: #4adede;
+    color: #151526;
+    box-shadow: 0 0 20px rgba(74, 222, 222, 0.8);
+    transform: scale(1.05);
+  }
+
+  /* Mensagem resultado */
+  #resultado {
+    font-size: 20px;
+    margin-top: 15px;
+    height: 24px;
+  }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111122;
+    color: #666;
+    border-top: 2px solid #4adede;
+  }

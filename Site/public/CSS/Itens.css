@@ -39,7 +39,7 @@ nav.navbar {
   flex-wrap: wrap;
 }
 
-.auth-links {
+.Lado-links {
   display: flex;
   gap: 20px;
 }
@@ -55,7 +55,7 @@ color: #fff;
   letter-spacing: 0.5px;
 
 }
-.auth-links a {
+.Lado-links a {
   color: #fff;
   font-weight: bold;
   text-decoration: none;
@@ -85,7 +85,7 @@ color: #4adede;
 
 }
 
-.auth-links a::after {
+.Lado-links a::after {
   content: '';
   display: block;
   width: 0;
@@ -95,11 +95,11 @@ color: #4adede;
   margin: 2px auto 0;
 }
 
-.auth-links a:hover::after {
+.Lado-links a:hover::after {
   width: 100%;
 }
 
-.auth-links a:hover {
+.Lado-links a:hover {
   color: #4adede;
 }
 
@@ -109,14 +109,14 @@ color: #4adede;
       margin: 0 auto;
     }
 
-    .tier-row {
+    .tiers {
       display: flex;
       align-items: center;
       margin-bottom: 20px;
       gap: 20px;
     }
 
-    .tier-label {
+    .tier {
       width: 60px;
       height: 60px;
       font-size: 24px;
@@ -133,18 +133,27 @@ color: #4adede;
     .tier-B { background-color: #f7dc6f; } 
     .tier-C { background-color: #fdfd96; }
 
-    .item-icon {
+    .item-Superior {
   position: relative;
   display: inline-block;
 }
 
-.item-icon img {
+.item-Superior img {
   width: 50px;
   height: 50px;
   cursor: pointer;
+  transition: all 0.6s ease;
 }
 
-.tooltip-advanced {
+.item-Superior :hover{
+
+transition: all 0.6s ease;
+transform:translateY(-2px);
+box-shadow: 0px 2px 10px #4adede;
+
+}
+
+.Descricao {
   display: none;
   position: absolute;
   background-color: #111122;
@@ -153,51 +162,36 @@ color: #4adede;
   width: 250px;
   top: -10px;
   left: 60px;
-  z-index: 10;
+  z-index: 1;
   border: 1px solid #4adede;
   border-radius: 10px;
   font-size: 14px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.tooltip-advanced h4 {
+.Descricao h4 {
   margin: 0 0 10px;
   color: #4adede;
   font-size: 16px;
 }
 
-.tooltip-advanced .stats {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.tooltip-advanced .mini-icon {
+.Descricao .item-base {
   width: 20px;
   height: 20px;
   vertical-align: middle;
   margin-left: 4px;
 }
 
-.item-icon:hover .tooltip-advanced {
+.item-Superior:hover .Descricao {
   display: block;
 }
 
-    .item-icon:hover .tooltip {
-      opacity: 1;
-    }
-
-    .tier-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
+    .tier-pai {
   padding: 40px;
 }
 
 .tier-list {
-  flex: 2;
+  flex: 4;
 }
 
 .tier-image {
