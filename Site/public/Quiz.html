@@ -202,6 +202,8 @@
   // Variáveis de controle
   let perguntasSelecionadas = []; // perguntas da rodada atual
   let perguntaAtual = 0;
+  var acertos = 0;
+  var erros = 0;
 
   // Função para iniciar o quiz quando o usuário clicar em "Jogar"
   function iniciarQuiz() {
@@ -356,7 +358,7 @@
     const selecionado2 = slot2.firstChild.getAttribute("data-nome");
 
     const pergunta = perguntasSelecionadas[perguntaAtual];
-
+  
     // Verifica se os itens arrastados são os mesmos, em qualquer ordem
     const acerto =
       (selecionado1 == pergunta.base1.nome &&
@@ -366,9 +368,11 @@
 
     const resultado = document.getElementById("resultado");
     if (acerto) {
+      acertos ++;
       resultado.style.color = "#4adede";
       resultado.textContent = "Parabéns! Você acertou!";
     } else {
+      erros ++;
       resultado.style.color = "#e74c3c";
       resultado.textContent = "Ops! Você errou. Tente a próxima.";
     }
@@ -402,7 +406,7 @@
 
     if (perguntaAtual >= perguntasSelecionadas.length) {
       // Acabaram as perguntas
-      alert("Quiz finalizado! Obrigado por jogar.");
+      alert(`Quiz finalizado! Você acertou: ${acertos} de 5 perguntas. Obrigado por jogar.`);
       // Reiniciar quiz para jogar de novo (opcional)
       window.location.reload();
     } else {

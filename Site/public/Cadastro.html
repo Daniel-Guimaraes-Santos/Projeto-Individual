@@ -10,13 +10,14 @@
 <body>
     <div class="container">
         <h1>Cadastro <br> TFTmastery</h1>
-        <form id="register-form">
+        <form>
           <input type="text" placeholder="Usuario" id="inp_usuario">
           <input type="email" placeholder="Email" id="inp_email">
           <input type="password" placeholder="Senha" id="inp_senha">
           <input type="password" placeholder="Confirmação de senha" id="inp_confirmacao">
-          <button onclick="cadastrar()" type="submit">Cadastrar</button>
+          <button type="button" onclick="cadastrar()">Cadastrar</button>
           <p>Já tem conta? <a href="login.html">Faça login</a></p>
+          <div id="mensagem_erro"></div>
         </form>
         <p id="mensagem"></p>
       </div>
@@ -68,13 +69,15 @@
         console.log("resposta: ", resposta);
         
         if (resposta.ok) {
-          cardErro.style.display = "block";
-          
+          // cardErro.style.display = "block";
+
+          console.log("Teste")
+
           mensagem_erro.innerHTML =
           "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
           
           setTimeout(() => {
-            window.location = "login.html";
+            window.location = "Login.html";
           }, "2000");
           
         } else {
