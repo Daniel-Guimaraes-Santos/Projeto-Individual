@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="CSS/Index.css" />
   </head>
 
-  <body>
+  <body onload="validarSessao()">
     <header>
       <nav class="navbar">
         <div class="logo">
@@ -18,23 +18,21 @@
         </div>
         <div id="meio" class="nav-links">
           <a href="Index.html">Início</a>
-          <a href="MonteComp.html">Crie sua composição</a>
+          <a href="MonteComp.html" id="MonteComp">Crie sua composição</a>
           <a href="Itens.html">Itens</a>
           <a href="Composicoes.html">Composições</a>
-          <a href="#">Dashboard</a>
-          <a href="Quiz.html">Quiz</a>
+          <a href="dashboard.html" id="Dashboard">Dashboard</a>
+          <a href="Quiz.html" id="Quiz">Quiz</a>
         </div>
         <div id="Lado" class="Lado-links">
-          <a href="Login.html">Login</a>
-          <a href="Cadastro.html">Cadastro</a>
+          <a href="Login.html"    id="b_usuario">Login</a>
+          <a href="Cadastro.html" id="cadastro">Cadastro</a>
         </div>
       </nav>
     </header>
 
-    <section class="video-banner">
-      <video autoplay muted loop>
-        <source src="Img/pick-up-and-go.webm" type="video/webm" />
-        Seu navegador não suporta vídeos HTML5.
+    <section class="banner">
+      <video src="Img/pick-up-and-go.webm" autoplay muted loop>
       </video>
     </section>
 
@@ -93,7 +91,7 @@
           Veja as melhores combinações e sinergias para equipar seus campeões.
         </p>
       </div>
-      <div class="card">
+      <div class="card" id="">
         <h3>Tier List</h3>
         <p>Classificação atualizada dos campeões por custo e performance.</p>
       </div>

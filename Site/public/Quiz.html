@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Patch Note</title>
+    <title>Quiz</title>
     <script src="./js/sessao.js"></script>
     <link rel="stylesheet" href="CSS/Quiz.css" />
   </head>
 
-  <body>
+  <body onload="validarSessao()">
     <header>
       <nav class="navbar">
         <div class="logo">
@@ -18,15 +18,15 @@
         </div>
         <div id="meio" class="nav-links">
           <a href="Index.html">Início</a>
-          <a href="MonteComp.html">Crie sua composição</a>
+          <a href="MonteComp.html" id="MonteComp">Crie sua composição</a>
           <a href="Itens.html">Itens</a>
           <a href="Composicoes.html">Composições</a>
-          <a href="#">Dashboard</a>
-          <a href="Quiz.html">Quiz</a>
+          <a href="#" id="Dashboard">Dashboard</a>
+          <a href="Quiz.html" id="Quiz">Quiz</a>
         </div>
         <div id="Lado" class="Lado-links">
-          <a href="Login.html">Login</a>
-          <a href="Cadastro.html">Cadastro</a>
+          <a href="Login.html"    id="b_usuario">Login</a>
+          <a href="Cadastro.html" id="cadastro">Cadastro</a>
         </div>
       </nav>
     </header>

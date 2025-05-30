@@ -11,14 +11,15 @@ body {
     background-size: cover;
     background-position: center;
   }
- 
+ .container h1, p {
+  text-align: center;
+}
   .container {
-   
     background: rgba(11, 11, 61, 85%);
     padding: 50px;
     border-radius: 10px;
     width: 350px;
-    text-align: center;
+    text-align: left;
     justify-content: end;
   }
   

@@ -11,10 +11,14 @@
     <div class="container">
         <h1>Cadastro <br> TFTmastery</h1>
         <form>
+          <div> Nome:</div>
           <input type="text" placeholder="Usuario" id="inp_usuario">
-          <input type="email" placeholder="Email" id="inp_email">
-          <input type="password" placeholder="Senha" id="inp_senha">
-          <input type="password" placeholder="Confirmação de senha" id="inp_confirmacao">
+          <div>Email:</div>
+          <input type="email" placeholder="xxx@email.com" id="inp_email">
+          <div>Senha:</div>
+          <input type="password" placeholder="*********" id="inp_senha">
+          <div>Confirmação de senha:</div>
+          <input type="password" placeholder="*********" id="inp_confirmacao">
           <button type="button" onclick="cadastrar()">Cadastrar</button>
           <p>Já tem conta? <a href="login.html">Faça login</a></p>
           <div id="mensagem_erro"></div>
@@ -48,7 +52,7 @@
         "(Mensagem de erro para todos os campos em branco)";
 
       return;
-    } else {
+    }else {
       
       
       // Enviando o valor da nova input

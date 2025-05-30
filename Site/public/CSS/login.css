@@ -12,14 +12,16 @@ body {
     background-position: center;
   background-repeat: no-repeat;
   }
-
+.container h1, p {
+  text-align: center;
+}
   .container {
 
     background: rgba(11, 11, 61, 85%);
     padding: 50px;
     border-radius: 10px;
     width: 300px;
-    text-align: center;
+    text-align: left;
   }
   
   form {
