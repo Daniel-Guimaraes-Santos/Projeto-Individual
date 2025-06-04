@@ -13,12 +13,13 @@ function validarSessao() {
     MonteComp.style.display = "none";
     Dashboard.style.display = "none";
     Quiz.style.display = "none";
+    Sair.style.display = "none";
   }
 }
 
 function limparSessao() {
   sessionStorage.clear();
-  window.location = "../login.html";
+  window.location = "../index.html";
 }
 
 // carregamento (loading)

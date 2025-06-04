@@ -21,6 +21,7 @@
           <input type="password" placeholder="*********" id="inp_confirmacao">
           <button type="button" onclick="cadastrar()">Cadastrar</button>
           <p>Já tem conta? <a href="login.html">Faça login</a></p>
+          <a href="Index.html">Vá para a tela inicial</a>
           <div id="mensagem_erro"></div>
         </form>
         <p id="mensagem"></p>
@@ -31,64 +32,64 @@
 <script>
 
   function cadastrar() {
-    // aguardar();
+      // aguardar();
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nomeVar = inp_usuario.value;
-    var emailVar = inp_email.value;
-    var senhaVar = inp_senha.value;
-    var confirmacaoSenhaVar = inp_confirmacao.value;
+      //Recupere o valor da nova input pelo nome do id
+      // Agora vá para o método fetch logo abaixo
+      var nomeVar = inp_usuario.value;
+      var emailVar = inp_email.value;
+      var senhaVar = inp_senha.value;
+      var confirmacaoSenhaVar = inp_confirmacao.value;
 
-    // Verificando se há algum campo em branco
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-    ){
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+      // Verificando se há algum campo em branco
+      if (
+        nomeVar == "" ||
+        emailVar == "" ||
+        senhaVar == "" ||
+        confirmacaoSenhaVar == ""
+      ){
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML =
+          "(Mensagem de erro para todos os campos em branco)";
 
-      return;
-    }else {
-      
-      
-      // Enviando o valor da nova input
-      fetch("/usuarios/cadastrar", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          // crie um atributo que recebe o valor recuperado aqui
-          // Agora vá para o arquivo routes/usuario.js
-          nomeServer: nomeVar,
-          emailServer: emailVar,
-          senhaServer: senhaVar,
-        }),
-      })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
+        return;
+      }else {
         
-        if (resposta.ok) {
-          // cardErro.style.display = "block";
-
-          console.log("Teste")
-
-          mensagem_erro.innerHTML =
-          "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+        
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            nomeServer: nomeVar,
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+          }),
+        })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
           
-          setTimeout(() => {
-            window.location = "Login.html";
-          }, "2000");
-          
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-        }
-      })
-    }
+          if (resposta.ok) {
+            // cardErro.style.display = "block";
+
+            console.log("Teste")
+
+            mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+            
+            setTimeout(() => {
+              window.location = "Login.html";
+            }, "2000");
+            
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+      }
 
   }
 

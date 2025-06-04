@@ -10,9 +10,10 @@ body {
               
   }
 
+
   header {
     background: #111122;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     border-bottom: 2px solid #4adede;
   }
@@ -22,7 +23,7 @@ nav.navbar {
   align-items: center;
   justify-content: space-between;
   background-color: #151526;
-  padding: 20px 50px;
+  padding: 5px 50px;
   flex-wrap: wrap;
 }
 
@@ -102,6 +103,34 @@ color: #4adede;
 .Lado-links a:hover {
   color: #4adede;
 }
+
+.introducao-itens {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #111122;
+  border: 1px solid #4adede;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+  text-align: left;
+}
+
+.introducao-itens h2 {
+  font-size: 26px;
+  color: #4adede;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.introducao-itens p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #f0f0f0;
+  margin-bottom: 15px;
+}
+
 
 .tier-list {
       padding: 40px;
@@ -196,7 +225,7 @@ box-shadow: 0px 2px 10px #4adede;
 
 .tier-image {
   position: absolute;
-  top: 400px; 
+  top: 750px; 
   right: 250px;
   width: 300px;
   height: 250px;

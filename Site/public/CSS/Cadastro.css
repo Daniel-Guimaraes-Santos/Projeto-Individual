@@ -11,7 +11,7 @@ body {
     background-size: cover;
     background-position: center;
   }
- .container h1, p {
+ .container h1, p, a {
   text-align: center;
 }
   .container {

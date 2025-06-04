@@ -10,7 +10,7 @@ body {
 
   header {
     background: #111122;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     border-bottom: 2px solid #4adede;
   }
@@ -20,7 +20,7 @@ nav.navbar {
   align-items: center;
   justify-content: space-between;
   background-color: #151526;
-  padding: 20px 50px;
+  padding: 5px 50px;
   flex-wrap: wrap;
 }
 

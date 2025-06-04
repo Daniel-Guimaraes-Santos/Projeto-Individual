@@ -11,7 +11,7 @@ body {
 
   header {
     background: #111122;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     border-bottom: 2px solid #4adede;
   }
@@ -21,7 +21,7 @@ nav.navbar {
   align-items: center;
   justify-content: space-between;
   background-color: #151526;
-  padding: 20px 50px;
+  padding: 5px 50px;
   flex-wrap: wrap;
 }
 
@@ -172,36 +172,6 @@ margin-top: 30px;
   text-align: center;
   color: #ccc;
   line-height: 1.6;
-}
-
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 40px;
-}
-
-.card {
-  margin-top: 50px;
-  background-color: #222244;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
-}
-
-.card h3 {
-  color: #4adede;
-}
-
-.card p {
-  color: #ccc;
 }
 
 footer {
