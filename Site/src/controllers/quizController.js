@@ -19,6 +19,7 @@ function obterKPIs(req, res) {
 
 function graficoEvolucao(req, res) {
     const id_usuario = req.query.id_usuario;
+
     quizModel.graficoEvolucao(id_usuario)
         .then(r => res.json(r))
         .catch(e => res.status(500).json(e.sqlMessage));
@@ -26,6 +27,7 @@ function graficoEvolucao(req, res) {
 
 function graficoComparativo(req, res) {
     const id_usuario = req.query.id_usuario;
+    
     quizModel.graficoComparativo(id_usuario)
         .then(r => res.json(r))
         .catch(e => res.status(500).json(e.sqlMessage));

@@ -24,40 +24,48 @@
           <a href="Quiz.html" id="Quiz">Quiz</a>
         </div>
         <div id="Lado" class="Lado-links">
-          <a href="Login.html"    id="b_usuario">Login</a>
+          <a href="Login.html" id="b_usuario">Login</a>
           <a href="Cadastro.html" id="cadastro">Cadastro</a>
           <a id="Sair" onclick="limparSessao()">Sair</a>
         </div>
       </nav>
     </header>
-<section id="instrucoes-gerais" class="instrucoes-quiz">
-    <h2>Como funcionam os Quizzes do TFT?</h2>
-    <p>
-        Teste seus conhecimentos sobre Teamfight Tactics com nossos quizzes interativos!
-    </p>
-    <p>
-        <strong>Quiz de Itens:</strong> Combine os itens base para formar o item compvaro.
-    </p>
-    <p>
-        <strong>Quiz de Classes:</strong> Selecione os campeões que pertencem à classe/origem mostrada.
-    </p>
-    <p>
-        Em ambos os quizzes, você terá <strong>5 perguntas aleatórias</strong> por partida.
-    </p>
-    <p>
-        Arraste os elementos para os slots e clique em <strong>"Verificar"</strong> para ver se acertou.
-    </p>
-    <p>Escolha um quiz acima para começar. Boa sorte, estrategista!</p>
-</section>
-    <!-- ========== NOVO: Menu de seleção de quiz ========== -->
+    <section id="instrucoes-gerais" class="instrucoes-quiz">
+      <h2>Como funcionam os Quizzes do TFT?</h2>
+      <p>
+        Teste seus conhecimentos sobre Teamfight Tactics com nossos quizzes
+        interativos!
+      </p>
+      <p>
+        <strong>Quiz de Itens:</strong> Combine os itens base para formar o item
+        compvaro.
+      </p>
+      <p>
+        <strong>Quiz de Classes:</strong> Selecione os campeões que pertencem à
+        classe/origem mostrada.
+      </p>
+      <p>
+        Em ambos os quizzes, você terá
+        <strong>5 perguntas aleatórias</strong> por partida.
+      </p>
+      <p>
+        Arraste os elementos para os slots e clique em
+        <strong>"Verificar"</strong> para ver se acertou.
+      </p>
+      <p>Escolha um quiz acima para começar. Boa sorte, estrategista!</p>
+    </section>
+
     <div id="quiz-menu">
       <h2>Escolha seu quiz:</h2>
       <button onclick="selecionarQuiz('itens')">Quiz de Itens</button>
       <button onclick="selecionarQuiz('classes')">Quiz de Classes</button>
     </div>
 
-    <!-- Seção de instruções do quiz de itens (modificado para ter classe) -->
-    <section id="instrucoes-itens" class="instrucoes-quiz" style="display:none;">
+    <section
+      id="instrucoes-itens"
+      class="instrucoes-quiz"
+      style="display: none"
+    >
       <h2>Como funciona o Quiz de Itens do TFT?</h2>
       <p>
         Neste quiz, você verá um <strong>item final</strong> de Teamfight
@@ -79,8 +87,11 @@
       <button onclick="iniciarQuizItens()">Jogar Quiz de Itens</button>
     </section>
 
-    <!-- ========== NOVO: Seção de instruções do quiz de classes ========== -->
-    <section id="instrucoes-classes" class="instrucoes-quiz" style="display:none;">
+    <section
+      id="instrucoes-classes"
+      class="instrucoes-quiz"
+      style="display: none"
+    >
       <h2>Como funciona o Quiz de Classes do TFT?</h2>
       <p>
         Neste quiz, você verá uma <strong>classe/origem</strong> de Teamfight
@@ -102,15 +113,12 @@
       <button onclick="iniciarQuizClasses()">Jogar Quiz de Classes</button>
     </section>
 
-    <!-- Container do quiz de itens (modificado para ter id específico) -->
-    <section id="quiz-itens" class="quiz-container" style="display:none;">
-      <!-- Mostra o item final que o usuário deve formar -->
+    <section id="quiz-itens" class="quiz-container" style="display: none">
       <div id="item-final">
         <img src="" alt="Item Final" id="img-item-final" draggable="false" />
         <p id="nome-item-final"></p>
       </div>
 
-      <!-- Slots para arrastar os dois itens base -->
       <div id="slots">
         <div
           class="slot"
@@ -126,10 +134,8 @@
         ></div>
       </div>
 
-      <!-- Itens base para arrastar -->
       <div id="itens-base"></div>
 
-      <!-- Botões de ação -->
       <div>
         <button id="verificar-btn" onclick="verificarResposta()">
           Verificar
@@ -143,35 +149,56 @@
         </button>
       </div>
 
-      <!-- Resultado da verificação -->
       <div id="resultado"></div>
     </section>
 
-    <!-- ========== NOVO: Container do quiz de classes ========== -->
-    <section id="quiz-classes" class="quiz-container" style="display:none;">
-      <!-- Mostra a classe/origem que o usuário deve identificar -->
+    <section id="quiz-classes" class="quiz-container" style="display: none">
       <div id="classe-final">
-        <img src="" alt="Classe Final" id="img-classe-final" draggable="false" />
+        <img
+          src=""
+          alt="Classe Final"
+          id="img-classe-final"
+          draggable="false"
+        />
         <p id="nome-classe-final"></p>
       </div>
 
-      <!-- Slots para arrastar os três campeões -->
       <div id="slots-classes">
-        <div class="slot" id="slot-classe1" ondrop="soltarClasse(event)" ondragover="permitirSoltar(event)"></div>
-        <div class="slot" id="slot-classe2" ondrop="soltarClasse(event)" ondragover="permitirSoltar(event)"></div>
-        <div class="slot" id="slot-classe3" ondrop="soltarClasse(event)" ondragover="permitirSoltar(event)"></div>
+        <div
+          class="slot"
+          id="slot-classe1"
+          ondrop="soltarClasse(event)"
+          ondragover="permitirSoltar(event)"
+        ></div>
+        <div
+          class="slot"
+          id="slot-classe2"
+          ondrop="soltarClasse(event)"
+          ondragover="permitirSoltar(event)"
+        ></div>
+        <div
+          class="slot"
+          id="slot-classe3"
+          ondrop="soltarClasse(event)"
+          ondragover="permitirSoltar(event)"
+        ></div>
       </div>
 
-      <!-- Campeões para arrastar -->
       <div id="campeoes-base"></div>
 
-      <!-- Botões de ação -->
       <div>
-        <button id="verificar-btn-classes" onclick="verificarRespostaClasses()">Verificar</button>
-        <button id="proxima-btn-classes" onclick="proximaPerguntaClasses()" style="display:none">Próxima Pergunta</button>
+        <button id="verificar-btn-classes" onclick="verificarRespostaClasses()">
+          Verificar
+        </button>
+        <button
+          id="proxima-btn-classes"
+          onclick="proximaPerguntaClasses()"
+          style="display: none"
+        >
+          Próxima Pergunta
+        </button>
       </div>
 
-      <!-- Resultado da verificação -->
       <div id="resultado-classes"></div>
     </section>
 
@@ -181,8 +208,7 @@
   </body>
 </html>
 <script>
-
-const perguntas = [
+  const perguntas = [
     {
       nome: "Efeito Azul",
       imgFinal: "Img/Itens/S-BlueBuff.png",
@@ -213,55 +239,55 @@ const perguntas = [
       base1: { nome: "Luva", img: "Img/Itens/luva.png" },
       base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
     },
-        {
+    {
       nome: "Morellonomicon",
       imgFinal: "Img/Itens/S-Morellonomicon.png",
       base1: { nome: "Cinto", img: "Img/Itens/Cinto.png" },
       base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
     },
-        {
+    {
       nome: "Efeito Vermelho",
       imgFinal: "Img/Itens/S-RedBuff.png",
       base1: { nome: "Arco", img: "Img/Itens/Arco.png" },
       base2: { nome: "Arco", img: "Img/Itens/Arco.png" },
     },
-        {
+    {
       nome: "Lança de Shojin",
       imgFinal: "Img/Itens/S-SpearofShojin.png",
       base1: { nome: "Espada", img: "Img/Itens/Espada.png" },
       base2: { nome: "Lágrima", img: "Img/Itens/Gota.png" },
     },
-        {
+    {
       nome: "Capa de Fogo Solar",
       imgFinal: "Img/Itens/S-SunfireCape.png",
       base1: { nome: "Armadura", img: "Img/Itens/Armadura.png" },
       base2: { nome: "Cinto", img: "Img/Itens/Cinto.png" },
     },
-        {
+    {
       nome: "Armadura de Warmog",
       imgFinal: "Img/Itens/S-WarmogsArmor.png",
       base1: { nome: "Cinto", img: "Img/Itens/Cinto.png" },
       base2: { nome: "Cinto", img: "Img/Itens/Cinto.png" },
     },
-        {
+    {
       nome: "Cajado do Arcanjo",
       imgFinal: "Img/Itens/A-ArchangelsStaff.png",
       base1: { nome: "Lágrima", img: "Img/Itens/Gota.png" },
       base2: { nome: "Bastão", img: "Img/Itens/Bastao.png" },
     },
-        {
+    {
       nome: "Sedenta por Sangue",
       imgFinal: "Img/Itens/A-Bloodthirster.png",
       base1: { nome: "Espada", img: "Img/Itens/Espada.png" },
       base2: { nome: "Capa", img: "Img/Itens/Capa.png" },
     },
-        {
+    {
       nome: "Lâmina Mortal",
       imgFinal: "Img/Itens/A-Deathblade.png",
       base1: { nome: "Espada", img: "Img/Itens/Espada.png" },
       base2: { nome: "Espada", img: "Img/Itens/Espada.png" },
     },
-        {
+    {
       nome: "Proteção Imutável",
       imgFinal: "Img/Itens/A-Evenshroud.png",
       base1: { nome: "Cinto", img: "Img/Itens/Cinto.png" },
@@ -269,304 +295,320 @@ const perguntas = [
     },
   ];
 
-var perguntasSelecionadas = [];
-var perguntaAtual = 0;
-var acertos = 0;
-var erros = 0;
+  var perguntasSelecionadas = [];
+  var perguntaAtual = 0;
+  var acertos = 0;
+  var erros = 0;
 
-const perguntasClasses = [
+  const perguntasClasses = [
     {
-        nome: "Ciberchefão",
-        imgFinal: "Img/Classes/cyberboss.jpg",
-        campeoes: [
-            { nome: "Poppy", img: "Img/personagens/poppy.jpg" },
-            { nome: "Kobuko", img: "Img/personagens/kobuko.jpg" },
-            { nome: "Veigar", img: "Img/personagens/veigar.jpg" }
-        ]
+      nome: "Ciberchefão",
+      imgFinal: "Img/Classes/cyberboss.jpg",
+      campeoes: [
+        { nome: "Poppy", img: "Img/personagens/poppy.jpg" },
+        { nome: "Kobuko", img: "Img/personagens/kobuko.jpg" },
+        { nome: "Veigar", img: "Img/personagens/veigar.jpg" },
+      ],
     },
-   {
-        nome: "Dínamo",
-        imgFinal: "Img/Classes/dinamo.jpg",
-        campeoes: [
-            { nome: "Morgana", img: "Img/personagens/morgana.jpg" },
-            { nome: "Jhin", img: "Img/personagens/jhin.jpg" },
-            { nome: "Aurora", img: "Img/personagens/aurora.jpg" }
-        ]
+    {
+      nome: "Dínamo",
+      imgFinal: "Img/Classes/dinamo.jpg",
+      campeoes: [
+        { nome: "Morgana", img: "Img/personagens/morgana.jpg" },
+        { nome: "Jhin", img: "Img/personagens/jhin.jpg" },
+        { nome: "Aurora", img: "Img/personagens/aurora.jpg" },
+      ],
     },
-     {
-        nome: "Esquadrão Anima",
-        imgFinal: "Img/Classes/anima.jpg",
-        campeoes: [
-            { nome: "Sylas", img: "Img/personagens/sylas.jpg" },
-            { nome: "Leona", img: "Img/personagens/leona.jpg" },
-            { nome: "Aurora", img: "Img/personagens/aurora.jpg" }
-        ]
+    {
+      nome: "Esquadrão Anima",
+      imgFinal: "Img/Classes/anima.jpg",
+      campeoes: [
+        { nome: "Sylas", img: "Img/personagens/sylas.jpg" },
+        { nome: "Leona", img: "Img/personagens/leona.jpg" },
+        { nome: "Aurora", img: "Img/personagens/aurora.jpg" },
+      ],
     },
-     {
-        nome: "Brutamontes",
-        imgFinal: "Img/Classes/brutamontes.jpeg",
-        campeoes: [
-            { nome: "Darius", img: "Img/personagens/darius.jpg" },
-            { nome: "Kobuko", img: "Img/personagens/kobuko.jpg" },
-            { nome: "Mordekaiser", img: "Img/personagens/mordekaiser.jpg" }
-        ]
+    {
+      nome: "Brutamontes",
+      imgFinal: "Img/Classes/brutamontes.jpeg",
+      campeoes: [
+        { nome: "Darius", img: "Img/personagens/darius.jpg" },
+        { nome: "Kobuko", img: "Img/personagens/kobuko.jpg" },
+        { nome: "Mordekaiser", img: "Img/personagens/mordekaiser.jpg" },
+      ],
     },
-     {
-        nome: "Tecnológico",
-        imgFinal: "Img/Classes/techie.jpg",
-        campeoes: [
-            { nome: "Mordekaiser", img: "Img/personagens/mordekaiser.jpg" },
-            { nome: "Brand", img: "Img/personagens/brand.jpg" },
-            { nome: "Veigar", img: "Img/personagens/veigar.jpg" }
-        ]
+    {
+      nome: "Tecnológico",
+      imgFinal: "Img/Classes/techie.jpg",
+      campeoes: [
+        { nome: "Mordekaiser", img: "Img/personagens/mordekaiser.jpg" },
+        { nome: "Brand", img: "Img/personagens/brand.jpg" },
+        { nome: "Veigar", img: "Img/personagens/veigar.jpg" },
+      ],
     },
-     {
-        nome: "Transgressor",
-        imgFinal: "Img/Classes/mob.jpg",
-        campeoes: [
-            { nome: "Shaco", img: "Img/personagens/shaco.jpg" },
-            { nome: "Darius", img: "Img/personagens/darius.jpg" },
-            { nome: "Braum", img: "Img/personagens/braum.jpg" }
-        ]
+    {
+      nome: "Transgressor",
+      imgFinal: "Img/Classes/mob.jpg",
+      campeoes: [
+        { nome: "Shaco", img: "Img/personagens/shaco.jpg" },
+        { nome: "Darius", img: "Img/personagens/darius.jpg" },
+        { nome: "Braum", img: "Img/personagens/braum.jpg" },
+      ],
     },
-     {
-        nome: "Estratégico",
-        imgFinal: "Img/Classes/controller.jpg",
-        campeoes: [
-            { nome: "Neeko", img: "Img/personagens/neeko.jpg" },
-            { nome: "Leblanc", img: "Img/personagens/leblanc.jpg" },
-            { nome: "Ekko", img: "Img/personagens/ekko.jpg" }
-        ]
+    {
+      nome: "Estratégico",
+      imgFinal: "Img/Classes/controller.jpg",
+      campeoes: [
+        { nome: "Neeko", img: "Img/personagens/neeko.jpg" },
+        { nome: "Leblanc", img: "Img/personagens/leblanc.jpg" },
+        { nome: "Ekko", img: "Img/personagens/ekko.jpg" },
+      ],
     },
-     {
-        nome: "Atirador",
-        imgFinal: "Img/Classes/marksman.jpg",
-        campeoes: [
-            { nome: "Aphelios", img: "Img/personagens/aphelios.jpg" },
-            { nome: "Jinx", img: "Img/personagens/jinx.jpg" },
-            { nome: "Jhin", img: "Img/personagens/jhin.jpg" }
-        ]
+    {
+      nome: "Atirador",
+      imgFinal: "Img/Classes/marksman.jpg",
+      campeoes: [
+        { nome: "Aphelios", img: "Img/personagens/aphelios.jpg" },
+        { nome: "Jinx", img: "Img/personagens/jinx.jpg" },
+        { nome: "Jhin", img: "Img/personagens/jhin.jpg" },
+      ],
     },
-     {
-        nome: "Vanguarda",
-        imgFinal: "Img/Classes/vanguard.jpg",
-        campeoes: [
-            { nome: "Sylas", img: "Img/personagens/sylas.jpg" },
-            { nome: "Braum", img: "Img/personagens/braum.jpg" },
-            { nome: "Leona", img: "Img/personagens/leona.jpg" }
-        ]
+    {
+      nome: "Vanguarda",
+      imgFinal: "Img/Classes/vanguard.jpg",
+      campeoes: [
+        { nome: "Sylas", img: "Img/personagens/sylas.jpg" },
+        { nome: "Braum", img: "Img/personagens/braum.jpg" },
+        { nome: "Leona", img: "Img/personagens/leona.jpg" },
+      ],
     },
-     {
-        nome: "ExoTec",
-        imgFinal: "Img/Classes/edgerunner.jpg",
-        campeoes: [
-            { nome: "Jhin", img: "Img/personagens/jhin.jpg" },
-            { nome: "Mordekaiser", img: "Img/personagens/mordekaiser.jpg" },
-            { nome: "Zeri", img: "Img/personagens/zeri.jpg" }
-        ]
+    {
+      nome: "ExoTec",
+      imgFinal: "Img/Classes/edgerunner.jpg",
+      campeoes: [
+        { nome: "Jhin", img: "Img/personagens/jhin.jpg" },
+        { nome: "Mordekaiser", img: "Img/personagens/mordekaiser.jpg" },
+        { nome: "Zeri", img: "Img/personagens/zeri.jpg" },
+      ],
     },
-];
+  ];
 
-var perguntasClassesSelecionadas = [];
-var perguntaClasseAtual = 0;
-var acertosClasses = 0;
-var errosClasses = 0;
+  var perguntasClassesSelecionadas = [];
+  var perguntaClasseAtual = 0;
+  var acertosClasses = 0;
+  var errosClasses = 0;
 
-function selecionarQuiz(tipo) {
-    document.getElementById('quiz-menu').style.display = 'none';
-    document.getElementById('instrucoes-gerais').style.display = 'none';
-    
-    if (tipo === 'itens') {
-        document.getElementById('instrucoes-itens').style.display = 'block';
+  function selecionarQuiz(tipo) {
+    document.getElementById("quiz-menu").style.display = "none";
+    document.getElementById("instrucoes-gerais").style.display = "none";
+
+    if (tipo === "itens") {
+      document.getElementById("instrucoes-itens").style.display = "block";
     } else {
-        document.getElementById('instrucoes-classes').style.display = 'block';
+      document.getElementById("instrucoes-classes").style.display = "block";
     }
-}
+  }
 
-function iniciarQuizItens() {
-    document.getElementById('instrucoes-itens').style.display = 'none';
-    document.getElementById('quiz-itens').style.display = 'block';
-    
+  function iniciarQuizItens() {
+    document.getElementById("instrucoes-itens").style.display = "none";
+    document.getElementById("quiz-itens").style.display = "block";
+
     perguntasSelecionadas = sortearPerguntas(5);
     perguntaAtual = 0;
     carregarPergunta(perguntaAtual);
-}
+  }
 
-function iniciarQuizClasses() {
-    document.getElementById('instrucoes-classes').style.display = 'none';
-    document.getElementById('quiz-classes').style.display = 'block';
-    
+  function iniciarQuizClasses() {
+    document.getElementById("instrucoes-classes").style.display = "none";
+    document.getElementById("quiz-classes").style.display = "block";
+
     perguntasClassesSelecionadas = sortearPerguntasClasses(5);
     perguntaClasseAtual = 0;
     carregarPerguntaClasse(perguntaClasseAtual);
-}
+  }
 
-function sortearPerguntasClasses(qtd) {
+  function sortearPerguntasClasses(qtd) {
     var copia = [...perguntasClasses];
     var sorteadas = [];
     for (var i = 0; i < qtd && copia.length > 0; i++) {
-        var idx = Math.floor(Math.random() * copia.length);
-        sorteadas.push(copia[idx]);
-        copia.splice(idx, 1);
+      var idx = Math.floor(Math.random() * copia.length);
+      sorteadas.push(copia[idx]);
+      copia.splice(idx, 1);
     }
     return sorteadas;
-}
+  }
 
-function carregarPerguntaClasse(index) {
+  function carregarPerguntaClasse(index) {
     limparSlotsClasses();
     limparResultadoClasses();
     mostrarVerificarClasses();
 
     const pergunta = perguntasClassesSelecionadas[index];
-    
-    document.getElementById('img-classe-final').src = pergunta.imgFinal;
-    document.getElementById('nome-classe-final').textContent = pergunta.nome;
-    
-    montarCampeoesBase();
-}
 
-function montarCampeoesBase() {
-    const container = document.getElementById('campeoes-base');
-    container.innerHTML = '';
+    document.getElementById("img-classe-final").src = pergunta.imgFinal;
+    document.getElementById("nome-classe-final").textContent = pergunta.nome;
+
+    montarCampeoesBase();
+  }
+
+  function montarCampeoesBase() {
+    const container = document.getElementById("campeoes-base");
+    container.innerHTML = "";
 
     var todosCampeoes = [];
-    
-    perguntasClasses.forEach(classe => {
-        classe.campeoes.forEach(campeao => {
-            if (!todosCampeoes.some(c => c.nome === campeao.nome)) {
-                todosCampeoes.push(campeao);
-            }
-        });
+
+    perguntasClasses.forEach((classe) => {
+      classe.campeoes.forEach((campeao) => {
+        if (!todosCampeoes.some((c) => c.nome === campeao.nome)) {
+          todosCampeoes.push(campeao);
+        }
+      });
     });
 
-    todosCampeoes.forEach(campeao => {
-        const div = document.createElement('div');
-        div.className = 'item-base';
-        div.setAttribute('draggable', 'true');
-        div.setAttribute('data-nome', campeao.nome);
-        div.setAttribute('ondragstart', 'arrastar(event)');
-        div.title = campeao.nome;
+    todosCampeoes.forEach((campeao) => {
+      const div = document.createElement("div");
+      div.className = "item-base";
+      div.setAttribute("draggable", "true");
+      div.setAttribute("data-nome", campeao.nome);
+      div.setAttribute("ondragstart", "arrastar(event)");
+      div.title = campeao.nome;
 
-        const img = document.createElement('img');
-        img.src = campeao.img;
-        img.alt = campeao.nome;
+      const img = document.createElement("img");
+      img.src = campeao.img;
+      img.alt = campeao.nome;
 
-        div.appendChild(img);
-        container.appendChild(div);
+      div.appendChild(img);
+      container.appendChild(div);
     });
-}
+  }
 
-function soltarClasse(event) {
+  function soltarClasse(event) {
     event.preventDefault();
-    const nomeCampeao = event.dataTransfer.getData('text');
+    const nomeCampeao = event.dataTransfer.getData("text");
     const slot = event.currentTarget;
 
     if (slot.firstChild) {
-        slot.removeChild(slot.firstChild);
+      slot.removeChild(slot.firstChild);
     }
 
-    const campeaoDiv = Array.from(document.querySelectorAll('.item-base'))
-        .find(div => div.getAttribute('data-nome') === nomeCampeao);
+    let campeaoDiv = null;
+const divs = document.querySelectorAll(".item-base");
+
+for (let i = 0; i < divs.length; i++) {
+  if (divs[i].getAttribute("data-nome") === nomeCampeao) {
+    campeaoDiv = divs[i];
+    break;
+  }
+}
 
     if (campeaoDiv) {
-        const clone = campeaoDiv.cloneNode(true);
-        clone.removeAttribute('draggable');
-        clone.classList.remove('item-base');
-        clone.style.cursor = 'default';
-        clone.style.width = '80px';
-        clone.style.height = '80px';
-        clone.firstChild.style.width = '100%';
-        clone.firstChild.style.height = '100%';
+      const clone = campeaoDiv.cloneNode(true);
+      clone.removeAttribute("draggable");
+      clone.classList.remove("item-base");
+      clone.style.cursor = "default";
+      clone.style.width = "80px";
+      clone.style.height = "80px";
+      clone.firstChild.style.width = "100%";
+      clone.firstChild.style.height = "100%";
 
-        slot.appendChild(clone);
+      slot.appendChild(clone);
     }
-}
+  }
 
-function verificarRespostaClasses() {
+  function verificarRespostaClasses() {
     const slots = [
-        document.getElementById('slot-classe1'),
-        document.getElementById('slot-classe2'),
-        document.getElementById('slot-classe3')
+      document.getElementById("slot-classe1"),
+      document.getElementById("slot-classe2"),
+      document.getElementById("slot-classe3"),
     ];
 
-    if (slots.some(slot => !slot.firstChild)) {
-        alert('Arraste três campeões para os slots antes de verificar!');
-        return;
+    if (slots.some((slot) => !slot.firstChild)) {
+      alert("Arraste três campeões para os slots antes de verificar!");
+      return;
     }
 
-    const selecionados = slots.map(slot => slot.firstChild.getAttribute('data-nome'));
+    const selecionados = slots.map((slot) =>
+      slot.firstChild.getAttribute("data-nome")
+    );
     const pergunta = perguntasClassesSelecionadas[perguntaClasseAtual];
-    const campeoesCorretos = pergunta.campeoes.map(c => c.nome);
+    const campeoesCorretos = pergunta.campeoes.map((c) => c.nome);
 
-    const acerto = selecionados.every(s => campeoesCorretos.includes(s)) && 
-                   campeoesCorretos.every(c => selecionados.includes(c));
+    const acerto =
+      selecionados.every((s) => campeoesCorretos.includes(s)) &&
+      campeoesCorretos.every((c) => selecionados.includes(c));
 
-    const resultado = document.getElementById('resultado-classes');
+    const resultado = document.getElementById("resultado-classes");
     if (acerto) {
-        acertosClasses++;
-        resultado.style.color = '#4adede';
-        resultado.textContent = 'Parabéns! Você acertou!';
+      acertosClasses++;
+      resultado.style.color = "#4adede";
+      resultado.textContent = "Parabéns! Você acertou!";
     } else {
-        errosClasses++;
-        resultado.style.color = '#e74c3c';
-        resultado.textContent = 'Ops! Você errou. Tente a próxima.';
+      errosClasses++;
+      resultado.style.color = "#e74c3c";
+      resultado.textContent = "Ops! Você errou. Tente a próxima.";
     }
 
-    document.getElementById('verificar-btn-classes').style.display = 'none';
-    document.getElementById('proxima-btn-classes').style.display = 'inline-block';
-}
+    document.getElementById("verificar-btn-classes").style.display = "none";
+    document.getElementById("proxima-btn-classes").style.display =
+      "inline-block";
+  }
 
-function proximaPerguntaClasses() {
+  function proximaPerguntaClasses() {
     perguntaClasseAtual++;
     limparResultadoClasses();
 
     if (perguntaClasseAtual >= perguntasClassesSelecionadas.length) {
-  fetch("/quiz/registrar", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      tipo_quiz: "classes",
-      acertos: acertosClasses,
-      erros: errosClasses,
-      id_usuario: sessionStorage.ID_USUARIO
-    })
-  })
-  .then(() => {
-    alert(`Quiz finalizado! Você acertou: ${acertosClasses / 5 * 100}% das perguntas.`);
-    window.location.reload();
-  })
-  .catch(error => {
-    console.error("Erro ao registrar resultado:", error);
-    alert("Erro ao registrar resultado no banco de dados.");
-  });
-  return;
-} else {
-        carregarPerguntaClasse(perguntaClasseAtual);
+      fetch("/quiz/registrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          tipo_quiz: "classes",
+          acertos: acertosClasses,
+          erros: errosClasses,
+          id_usuario: sessionStorage.ID_USUARIO,
+        }),
+      })
+        .then(() => {
+          alert(
+            `Quiz finalizado! Você acertou: ${
+              (acertosClasses / 5) * 100
+            }% das perguntas.`
+          );
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.error("Erro ao registrar resultado:", error);
+          alert("Erro ao registrar resultado no banco de dados.");
+        });
+      return;
+    } else {
+      carregarPerguntaClasse(perguntaClasseAtual);
     }
-}
+  }
 
-function limparSlotsClasses() {
-    ['slot-classe1', 'slot-classe2', 'slot-classe3'].forEach(id => {
-        document.getElementById(id).innerHTML = '';
+  function limparSlotsClasses() {
+    ["slot-classe1", "slot-classe2", "slot-classe3"].forEach((id) => {
+      document.getElementById(id).innerHTML = "";
     });
-}
+  }
 
-function limparResultadoClasses() {
-    document.getElementById('resultado-classes').textContent = '';
-}
+  function limparResultadoClasses() {
+    document.getElementById("resultado-classes").textContent = "";
+  }
 
-function mostrarVerificarClasses() {
-    document.getElementById('verificar-btn-classes').style.display = 'inline-block';
-    document.getElementById('proxima-btn-classes').style.display = 'none';
-}
+  function mostrarVerificarClasses() {
+    document.getElementById("verificar-btn-classes").style.display =
+      "inline-block";
+    document.getElementById("proxima-btn-classes").style.display = "none";
+  }
 
-function permitirSoltar(event) {
+  function permitirSoltar(event) {
     event.preventDefault();
-}
+  }
 
-function arrastar(event) {
+  function arrastar(event) {
     var elemento = event.target;
 
     while (
@@ -577,9 +619,9 @@ function arrastar(event) {
     }
 
     event.dataTransfer.setData("text", elemento.getAttribute("data-nome"));
-}
+  }
 
-function soltar(event) {
+  function soltar(event) {
     event.preventDefault();
     const nomeItem = event.dataTransfer.getData("text");
 
@@ -589,10 +631,17 @@ function soltar(event) {
     if (slot.firstChild) {
       slot.removeChild(slot.firstChild);
     }
+    
 
-    const itemBaseDiv = Array.from(
-      document.querySelectorAll(".item-base")
-    ).find((div) => div.getAttribute("data-nome") === nomeItem);
+   let itemBaseDiv = null;
+const divs = document.querySelectorAll(".item-base");
+
+for (let i = 0; i < divs.length; i++) {
+  if (divs[i].getAttribute("data-nome") === nomeItem) {
+    itemBaseDiv = divs[i];
+    break;
+  }
+}
 
     if (itemBaseDiv) {
       const clone = itemBaseDiv.cloneNode(true);
@@ -607,9 +656,9 @@ function soltar(event) {
 
       slot.appendChild(clone);
     }
-}
+  }
 
-function verificarResposta() {
+  function verificarResposta() {
     const slot1 = document.getElementById("slot1");
     const slot2 = document.getElementById("slot2");
 
@@ -622,7 +671,7 @@ function verificarResposta() {
     const selecionado2 = slot2.firstChild.getAttribute("data-nome");
 
     const pergunta = perguntasSelecionadas[perguntaAtual];
-  
+
     const acerto =
       (selecionado1 == pergunta.base1.nome &&
         selecionado2 == pergunta.base2.nome) ||
@@ -631,66 +680,70 @@ function verificarResposta() {
 
     const resultado = document.getElementById("resultado");
     if (acerto) {
-      acertos ++;
+      acertos++;
       resultado.style.color = "#4adede";
       resultado.textContent = "Parabéns! Você acertou!";
     } else {
-      erros ++;
+      erros++;
       resultado.style.color = "#e74c3c";
       resultado.textContent = "Ops! Você errou. Tente a próxima.";
     }
 
     document.getElementById("verificar-btn").style.display = "none";
     document.getElementById("proxima-btn").style.display = "inline-block";
-}
+  }
 
-function limparSlots() {
+  function limparSlots() {
     document.getElementById("slot1").innerHTML = "";
     document.getElementById("slot2").innerHTML = "";
-}
+  }
 
-function limparResultado() {
+  function limparResultado() {
     const resultado = document.getElementById("resultado");
     resultado.textContent = "";
-}
+  }
 
-function mostrarVerificar() {
+  function mostrarVerificar() {
     document.getElementById("verificar-btn").style.display = "inline-block";
     document.getElementById("proxima-btn").style.display = "none";
-}
+  }
 
-function proximaPergunta() {
+  function proximaPergunta() {
     perguntaAtual++;
     limparResultado();
 
-   if (perguntaAtual >= perguntasSelecionadas.length) {
-  fetch("/quiz/registrar", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      tipo_quiz: "itens",
-      acertos: acertos,
-      erros: erros,
-      id_usuario: sessionStorage.ID_USUARIO
-    })
-  })
-  .then(() => {
-    alert(`Quiz finalizado! Você acertou: ${acertos / 5 * 100}% das perguntas.`);
-    window.location.reload();
-  })
-  .catch(error => {
-    console.error("Erro ao registrar resultado:", error);
-    alert("Erro ao registrar resultado no banco de dados.");
-  });
-  return;
-} else {
+    if (perguntaAtual >= perguntasSelecionadas.length) {
+      fetch("/quiz/registrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          tipo_quiz: "itens",
+          acertos: acertos,
+          erros: erros,
+          id_usuario: sessionStorage.ID_USUARIO,
+        }),
+      })
+        .then(() => {
+          alert(
+            `Quiz finalizado! Você acertou: ${
+              (acertos / 5) * 100
+            }% das perguntas.`
+          );
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.error("Erro ao registrar resultado:", error);
+          alert("Erro ao registrar resultado no banco de dados.");
+        });
+      return;
+    } else {
       carregarPergunta(perguntaAtual);
     }
-}
+  }
 
-function sortearPerguntas(qtd) {
+  function sortearPerguntas(qtd) {
     var copiaperguntas = [...perguntas];
     var sorteadas = [];
     for (var i = 0; i < qtd && copiaperguntas.length > 0; i++) {
@@ -699,9 +752,9 @@ function sortearPerguntas(qtd) {
       copiaperguntas.splice(idx, 1);
     }
     return sorteadas;
-}
+  }
 
-function carregarPergunta(index) {
+  function carregarPergunta(index) {
     limparSlots();
     limparResultado();
     mostrarVerificar();
@@ -715,37 +768,37 @@ function carregarPergunta(index) {
     document.getElementById("nome-item-final").textContent = pergunta.nome;
 
     montarItensBase();
-}
+  }
 
-function montarItensBase() {
-  const container = document.getElementById("itens-base");
-  container.innerHTML = "";
+  function montarItensBase() {
+    const container = document.getElementById("itens-base");
+    container.innerHTML = "";
 
-  var todosItensBase = [];
-  
-  perguntas.forEach((p) => {
-    todosItensBase.push(p.base1);
-    todosItensBase.push(p.base2);
-  });
+    var todosItensBase = [];
 
-  todosItensBase = todosItensBase.filter(
-    (item, pos, self) => self.findIndex((i) => i.nome == item.nome) == pos
-  );
+    perguntas.forEach((p) => {
+      todosItensBase.push(p.base1);
+      todosItensBase.push(p.base2);
+    });
 
-  todosItensBase.forEach((item) => {
-    const div = document.createElement("div");
-    div.classList.add("item-base");
-    div.setAttribute("draggable", "true");
-    div.setAttribute("data-nome", item.nome);
-    div.setAttribute("ondragstart", "arrastar(event)");
-    div.title = item.nome;
+    todosItensBase = todosItensBase.filter(
+      (item, pos, self) => self.findIndex((i) => i.nome == item.nome) == pos
+    );
 
-    const img = document.createElement("img");
-    img.src = item.img;
-    img.alt = item.nome;
+    todosItensBase.forEach((item) => {
+      const div = document.createElement("div");
+      div.classList.add("item-base");
+      div.setAttribute("draggable", "true");
+      div.setAttribute("data-nome", item.nome);
+      div.setAttribute("ondragstart", "arrastar(event)");
+      div.title = item.nome;
 
-    div.appendChild(img);
-    container.appendChild(div);
-  });
-}
+      const img = document.createElement("img");
+      img.src = item.img;
+      img.alt = item.nome;
+
+      div.appendChild(img);
+      container.appendChild(div);
+    });
+  }
 </script>

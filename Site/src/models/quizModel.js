@@ -6,7 +6,7 @@ function registrarResultado(acertos, erros, id_usuario, fkQuiz) {
         VALUES (${acertos}, ${erros}, ${id_usuario}, ${fkQuiz});
     `;
     return database.executar(sql);
-}
+}   
 
 function obterKPIs(id_usuario) {
     const sql = `

@@ -84,7 +84,19 @@ fetch(`/quiz/grafico1?id_usuario=${sessionStorage.ID_USUARIO}`)
           y: { beginAtZero: true, ticks: { color: "#fff" } },
           x: { ticks: { color: "#fff" } }
         },
-        plugins: { legend: { labels: { color: "#fff" } } }
+        plugins: {
+          legend: { 
+            labels: { color: "#fff" } } ,
+          title: {
+            display: true,
+            text: "Acertos por Tentativa",
+            color: 'white',
+            font: {
+              size: 25
+            }
+              
+        }
+      }
       }
     });
   });
@@ -117,7 +129,19 @@ fetch(`/quiz/grafico2?id_usuario=${sessionStorage.ID_USUARIO}`)
           y: { beginAtZero: true, ticks: { color: "#fff" } },
           x: { ticks: { color: "#fff" } }
         },
-        plugins: { legend: { labels: { color: "#fff" } } }
+        plugins: {
+          legend: { 
+            labels: { color: "#fff" } } ,
+          title: {
+            display: true,
+            text: "Acertos totais",
+            color: 'white',
+            font: {
+              size: 25
+            }
+              
+        }
+      }
       }
     });
   });

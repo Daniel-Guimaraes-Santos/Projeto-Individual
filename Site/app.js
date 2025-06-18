@@ -11,14 +11,12 @@ var HOST_APP = process.env.APP_HOST;
 
 var app = express();
 
-// ======= [MIDDLEWARES GLOBAIS] =======
-// (DEVEM vir antes das rotas!)
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
-// ======= [ROTAS] =======
+
 var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 var quizRouter = require('./src/routes/quiz');
